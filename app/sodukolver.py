@@ -14,16 +14,16 @@ class Sodukolver:
             if not data[i][j]
         ]
 
-    def solve(self, next_cell_index: int = 0):
+    def solve(self, empty_cell_index: int = 0):
         if next_cell_index >= len(self.empty_cells):
             return True
 
-        row, column = self.empty_cells[next_cell_index]
+        row, column = self.empty_cells[empty_cell_index]
 
         for i in range(1, self.size + 1):
             if self.check(row, column, i):
                 self.data[row][column] = i
-                if self.solve(next_cell_index + 1):
+                if self.solve(empty_cell_index + 1):
                     return True
 
                 self.data[row][column] = 0
