@@ -15,7 +15,7 @@ class Sodukolver:
         ]
 
     def solve(self, empty_cell_index: int = 0):
-        if next_cell_index >= len(self.empty_cells):
+        if empty_cell_index >= len(self.empty_cells):
             return True
 
         row, column = self.empty_cells[empty_cell_index]
